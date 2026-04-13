@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #05060a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0c0e17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #242a44;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00d4c8;
+  }
+}
+
+@layer utilities {
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #00d4c8, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(13, 16, 31, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 212, 200, 0.08);
+  }
+
+  .glass-heavy {
+    background: rgba(13, 16, 31, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(0, 212, 200, 0.12);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px rgba(0, 212, 200, 0.15), 0 0 60px rgba(0, 212, 200, 0.05);
+  }
+
+  .glow-cyan-strong {
+    box-shadow: 0 0 20px rgba(0, 212, 200, 0.4), 0 0 60px rgba(0, 212, 200, 0.15);
+  }
+
+  .border-glow {
+    border-color: rgba(0, 212, 200, 0.3);
+    box-shadow: 0 0 0 1px rgba(0, 212, 200, 0.1) inset;
+  }
+
+  .scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 200, 0.8), transparent);
+    animation: scan 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+/* Custom range input */
+input[type='range'] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+input[type='range']::-webkit-slider-track {
+  background: #242a44;
+  height: 4px;
+  border-radius: 2px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00d4c8;
+  cursor: pointer;
+  margin-top: -5px;
+}
